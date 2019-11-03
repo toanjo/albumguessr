@@ -1,4 +1,5 @@
 import { SET_ALBUMS, RESET_QUIZ } from '../actions/list';
+import { MARK_COMPLETED } from '../actions/quiz';
 
 const initState = [];
 const url = '#text';
@@ -23,6 +24,16 @@ function treatArray(a) {
   return b;
 }
 
+function setCompleted(list, item) {
+  for(var i = 0; i< list.data.length; i++) {
+    if(list.data[i].name === item.album.name) {
+      list.data[i].completed = true;
+      break;
+    }
+  }
+  return list;
+}
+
 export const listReducer = (list = initState, action) => {
   switch (action.type) {
     case SET_ALBUMS:
@@ -30,6 +41,10 @@ export const listReducer = (list = initState, action) => {
 
     case RESET_QUIZ:
       return {}
+
+    case MARK_COMPLETED:
+      setCompleted(list, action.payload);
+      return { ...list };
     
     default:
       return { ...list };
