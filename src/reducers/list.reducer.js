@@ -20,6 +20,7 @@ function treatArray(a) {
   for( let i=0; i<a.length; i++) {
     b.push({
       name: a[i].name,
+      artist: a[i].artist.name,
       image: a[i].image[3][url],
       completed: false
     })
