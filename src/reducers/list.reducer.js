@@ -1,7 +1,10 @@
-import { SET_ALBUMS, RESET_QUIZ } from '../actions/list';
+import { SET_ALBUMS, RESET_QUIZ, SHOW_ERROR } from '../actions/list';
 import { MARK_COMPLETED } from '../actions/quiz';
 
-const initState = [];
+const initState = {
+  data: [],
+  alert: false
+};
 const url = '#text';
 
 function shuffle(a) {
@@ -39,8 +42,11 @@ export const listReducer = (list = initState, action) => {
     case SET_ALBUMS:
      return { ...list, data: shuffle(treatArray(action.payload.topalbums.album)) }
 
+    case SHOW_ERROR:
+      return { ...list, data: [], alert: true }
+
     case RESET_QUIZ:
-      return {}
+      return initState;
 
     case MARK_COMPLETED:
       setCompleted(list, action.payload);

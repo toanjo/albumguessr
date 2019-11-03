@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      { Object.keys(state.list).length > 0 ? 
+      { Object.keys(state.list.data).length > 0 ? 
           <QuizArea /> 
         : 
           <>
