@@ -10,7 +10,7 @@ export default function InputArea() {
     return (
         <div className="column">
             <div className="field">
-            <input placeholder="Username" className="input" type="text" 
+            <input placeholder="Username" className="input" type="text" style={{width:'360px', textAlign:'center'}}
             value={username} onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div className="field">

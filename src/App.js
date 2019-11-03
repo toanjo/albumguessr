@@ -16,7 +16,7 @@ function App() {
           <QuizArea /> 
         : 
           <>
-            <p>AlbumGuessr takes your last_fm username and tests your knowledge on your favorite albums. 
+            <p>AlbumGuessr takes your <a href="https://www.last.fm/user/to_anjo" target="_blank">last.fm</a> username and tests your knowledge on your favorite albums. 
             Can you match all 50 album covers with their title?</p>
             <InputArea />
           </>
